@@ -1,22 +1,22 @@
 // import { Button } from 'bootstrap'
 import React from 'react'
-import { Row, Col, Card, Button } from 'reactstrap'
+import { Row, Col, Card } from 'reactstrap'
 import './Style.css'
-export default function AllTasks() {
+export default function InProgress() {
     const task_details = [
         {
             task_title: 'Landing page design',
             task_description: 'Task description, task descriptiom, task description',
             task_timeline_date: '12/01/2022',
             task_timeline_time: '12:00 PM',
-            task_status: 'In progress',
+            task_status: 'In Progress',
             task_assigned: 'Mr Hammad'
         },
     ]
 
 
     return (
-        <div className='m-3 whole'>
+        <div className='m-5 whole'>
             {task_details.map((item) => (
                 <Card className='shadow-sm dashboard_main_card p-3'>
                     <Row>
@@ -33,7 +33,7 @@ export default function AllTasks() {
                             </Card>
                         </Col>
                         <Col md={2}>
-                            <p className='task_data'>Timeline</p>
+                            <p className='task_data'>Deadline</p>
                             <Card className='shadow-sm p-3 timeline_card'>
                                 {item.task_timeline_date}
                                 {item.task_timeline_time}
@@ -41,7 +41,7 @@ export default function AllTasks() {
                         </Col>
                         <Col md={2}>
                             <p className='task_data'>Status</p>
-                            <Card className='shadow-sm p-3 status_card'>
+                            <Card className='shadow-sm p-3 progress_card'>
                                 {item.task_status}
                             </Card>
                         </Col>
@@ -49,8 +49,7 @@ export default function AllTasks() {
                             <p className='task_data'>Action</p>
                             <Card className='shadow-sm p-3 button_card'>
                                 <div className='text-center'>
-                                    <button className='view_button'>View</button>
-                                    <button className='submit_button'>Submit</button>
+                                    <button className='view_button'>Submit</button>
                                 </div>
                             </Card>
                         </Col>
