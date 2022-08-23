@@ -70,7 +70,7 @@
 }
 
 .create_task_card {
-  border: none !important;
+  /* border:  !important; */
 }
 
 .input_field {
@@ -109,7 +109,7 @@ textarea {
 
   background-color: rgba(255, 255, 0, 0.5) !important;
   color: rgb(168, 114, 14);
-  border: none !important;
+  /* border: none !important; */
 }
 
 .done_card {
@@ -117,12 +117,69 @@ textarea {
 
   background-color: rgba(0, 128, 0, 0.5) !important;
   color: rgb(5, 93, 5);
-  border: none !important;
-}
-.login-div {
-margin-top: 150px;
-}
-.login-card{
-    width: 100%;
+  /* border: none !important; */
 }
 
+.users_card {
+  font-size: 15px;
+  background-color: rgba(59, 216, 255, 0.5) !important;
+  color: rgb(5, 93, 58);
+  /* border: none !important; */
+}
+.login-div {
+  margin-top: 150px;
+}
+.login-card {
+  width: 100%;
+}
+.allusersbtn {
+  border: 1px solid rgb(35, 108, 80);
+  color: rgb(5, 93, 5);
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: rgba(0, 204, 255, 0.5);
+  /* margin: 15px 0; */
+}
+.pendingbtn {
+  /* font-size: 15px; */
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 166, 0, 0.5) !important;
+  color: rgb(151, 105, 18);
+  border: 1px solid rgb(151, 105, 18);
+}
+.inprogressbtn {
+  /* font-size: 15px; */
+  padding: 2px 5px;
+  border-radius: 5px;
+  /* background-color: rgba(255, 166, 0, 0.5) !important; */
+  color: rgb(151, 105, 18);
+  border: 1px solid rgb(151, 105, 18);
+
+  /* font-size: 15px; */
+
+  background-color: rgba(255, 255, 0, 0.5) !important;
+  color: rgb(168, 114, 14);
+  /* border: none !important; */
+}
+.donebtn {
+  padding: 2px 5px;
+  border-radius: 5px;
+  /* background-color: rgba(255, 166, 0, 0.5) !important; */
+  /* color: rgb(151, 105, 18); */
+  /* border: 1px solid rgb(151, 105, 18); */
+
+  font-size: 15px;
+
+  background-color: rgba(2, 151, 2, 0.5) !important;
+  color: rgb(5, 93, 5);
+  border: 1px solid rgb(5, 93, 5);
+  /* border: none !important; */
+}
+.pending_card {
+  font-size: 15px;
+
+  background-color: rgba(255, 166, 0, 0.5) !important;
+  color: rgb(151, 105, 18);
+  /* border: none !important; */
+}

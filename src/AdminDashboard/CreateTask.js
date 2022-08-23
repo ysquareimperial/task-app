@@ -5,7 +5,7 @@ import Button from './Button'
 export default function CreateTask() {
     return (
         <div className='m-5'>
-            <Card className='create_task_card p-3 shadow'>
+            <Card className='create_task_card p-3 shadow-sm'>
                 <p className='task_data'>Create Task</p>
                 <Row>
                     <Col md={5}>

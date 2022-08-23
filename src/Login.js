@@ -12,12 +12,11 @@ export default function Login() {
             <Col md={4}>
               <Card className='p-4 shadow login-card'>
                 <Row>
-                  <Col md={6}>
+                  <Col>
 
-                    <h3 className=''>Task Manager</h3>
-                    <h6 className=''>User Login</h6>
-                  </Col>
-                  <Col md={6}>
+                    <h3 className=''>Taskify</h3>
+                    <h6 className=''>Login</h6>
+                  
 
                   </Col>
                 </Row>

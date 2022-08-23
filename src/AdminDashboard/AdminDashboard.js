@@ -1,9 +1,19 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import { Col, Row } from 'reactstrap'
+import Sidebar from './Sidebar'
 
 export default function AdminDashboard() {
   return (
     <div>
-      <p>AdminDashboard</p>
+      <Row className=''>
+        <Col md={2} className='side-col'>
+          <Sidebar />
+        </Col>
+        <Col md={10} className=''>
+          <Outlet />
+        </Col>
+      </Row>
     </div>
   )
 }

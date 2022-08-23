@@ -11,11 +11,11 @@ export default function AppIndex() {
                 {/* <Col md={2} className='sidebar_col'>
                     <Sidebar />
                 </Col> */}
-                <Col md={1}></Col>
-                <Col md={10}>
+                {/* <Col md={1}></Col> */}
+                <Col md={12}>
                     <Outlet />
                 </Col>
-                <Col md={1}></Col>
+                {/* <Col md={1}></Col> */}
             </Row>
         </div >
     );
