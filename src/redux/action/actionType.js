@@ -1,0 +1,20 @@
+// user Action Type 
+
+export const LOADING='LOADING'
+export const LOGIN='LOGIN'
+export const ERROR="ERROR"
+export const LOGOUT= "LOGOUT"
+export const CREATING_USER="CREATING_USER" 
+export const ERROR_CREATING_USER='ERROR_CREATING_USER'
+export const LOGGING_IN = 'LOGGING_IN'
+export const LOGIN_ERROR = 'LOGIN_ERROR'
+export const SET_PROFILE = 'SET_PROFILE'
+export const RESTORE_TOKEN = 'RESTORE_TOKEN'
+export const SIGN_UP_LOADING = 'SIGN_UP_LOADING'
+export const SET_APP_THEME = 'SET_APP_THEME'
+export const SET_ACTIVE_BUSINESS = 'SET_ACTIVE_BUSINESS'
+export const SET_FORM_SETUP = 'SET_FORM_SETUP'
+
+export const GET_PENDING_TASKS = 'GET_PENDING_TASKS'
+export const GET_INPROGRESS_TASKS = 'GET_INPROGRESS_TASKS'
+export const GET_DONE_TASKS = 'GET_DONE_TASKS'

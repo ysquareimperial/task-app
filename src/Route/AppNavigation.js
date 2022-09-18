@@ -1,20 +1,19 @@
 import { useRoutes } from "react-router-dom";
-import AdminDashboard from "../AdminDashboard/AdminDashboard";
-import AdminHome from "../AdminDashboard/AdminHome";
-import AllUsers from "../AdminDashboard/AllUsers";
-import CreateTask from "../AdminDashboard/CreateTask";
-import CreateUser from "../AdminDashboard/CreateUser";
-import Done from "../AdminDashboard/Done";
-import InProgress from "../AdminDashboard/InProgress";
-import Pending from "../AdminDashboard/Pending";
-import Login from "../Login";
-import Navbar from "../Navbar";
-import DoneTasks from "../User/DoneTasks";
-import InProgressTasks from "../User/InProgressTasks";
-import PendingTasks from "../User/PendingTasks";
-// import AllTasks from "../User/PendingTasks";
+import Login from '../Login'
+import Register from '../Register'
+import PendingTasks from '../User/PendingTasks'
+import InProgressTasks from '../User/InProgressTasks'
+import DoneTasks from '../User/DoneTasks'
+import AllUsers from '../AdminDashboard/AllUsers'
+import CreateTask from '../AdminDashboard/CreateTask'
+import AdminDashboard from '../AdminDashboard/AdminDashboard'
+import AdminHome from '../AdminDashboard/AdminHome'
+import AllProjects from '../AdminDashboard/AllProjects'
+import CreateProject from '../AdminDashboard/CreateProject'
 import AppIndex from "./AppIndex";
-
+import Pending from "../AdminDashboard/Pending";
+import InProgress from "../AdminDashboard/InProgress";
+import Done from "../AdminDashboard/Done";
 function AppNavigation() {
     let element = useRoutes([
         {
@@ -23,10 +22,13 @@ function AppNavigation() {
             children: [{ index: true }],
         },
         {
-            // path: "/",
+            path: "/register",
+            element: <Register />,
+        },
+        {
             element: <AppIndex />,
             children: [
-                { index: true, element: <Navbar /> },
+                { index: true, element: < Login /> },
 
                 {
                     path: "/pending-tasks",
@@ -35,8 +37,7 @@ function AppNavigation() {
                 {
                     path: "/inprogress-tasks",
                     element: <InProgressTasks />,
-                },
-                {
+                }, {
                     path: "/done-tasks",
                     element: <DoneTasks />,
                 },
@@ -55,21 +56,25 @@ function AppNavigation() {
                             element: <CreateTask />,
                         },
                         {
-                            path: "/admin/create-user",
-                            element: <CreateUser />,
+                            path: "/admin/create-project",
+                            element: <CreateProject />,
                         },
                         {
-                            path: "/admin/pending-tasks",
-                            element: <Pending />,
-                        }, 
-                        {
-                            path: "/admin/inprogress-tasks",
-                            element: <InProgress />,
+                            path: "/admin/all-projects",
+                            element: <AllProjects />,
                         },
                         {
-                            path: "/admin/done-tasks",
-                            element: <Done />,
+                            path: '/admin/pending-tasks',
+                            element: <Pending />
                         },
+                        {
+                            path: '/admin/inprogress-tasks',
+                            element: <InProgress />
+                        },
+                        {
+                            path: '/admin/done-tasks',
+                            element: <Done/>
+                        }
                     ],
                 },
             ],

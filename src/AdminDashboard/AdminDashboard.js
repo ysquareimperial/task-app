@@ -6,7 +6,7 @@ import Sidebar from './Sidebar'
 export default function AdminDashboard() {
   return (
     <div>
-      <Row className=''>
+      <Row className='mt-4'>
         <Col md={2} className='side-col'>
           <Sidebar />
         </Col>

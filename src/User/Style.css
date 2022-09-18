@@ -9,6 +9,7 @@
 
   background-color: rgba(254, 189, 200, 0.3) !important;
   border: none !important;
+  border-radius: 0 !important;
   color: palevioletred;
 }
 
@@ -28,11 +29,13 @@
 }
 
 .status_card {
-  font-size: 15px;
+  font-size: 12px;
 
-  background-color: rgba(255, 166, 0, 0.5) !important;
+  background-color: rgba(255, 166, 0, 0.2) !important;
   color: rgb(151, 105, 18);
   border: none !important;
+  border-radius: 0 !important;
+  padding: 2px;
 }
 
 .button_card {
@@ -62,11 +65,12 @@
 
 .view_button {
   display: inline-block;
-  background-color: rgba(188, 188, 188, 0.5);
-  color: rgb(128, 30, 0);
-  padding: 4px 7px;
-  border-radius: 5px;
-  border: 1px solid rgb(128, 30, 0);
+  background-color: rgb(188, 188, 188);
+  color: rgb(255, 255, 255);
+  padding: 2px 4px;
+  border-radius: 0px;
+  border: 0;
+  font-size: 12px;
 }
 
 .create_task_card {
@@ -105,29 +109,32 @@ textarea {
 }
 
 .progress_card {
-  font-size: 15px;
+  font-size: 12px;
 
-  background-color: rgba(255, 255, 0, 0.5) !important;
+  background-color: rgba(255, 255, 0, 0.2) !important;
   color: rgb(168, 114, 14);
+  padding: 2px;
   /* border: none !important; */
 }
 
 .done_card {
-  font-size: 15px;
+  font-size: 12px;
 
-  background-color: rgba(0, 128, 0, 0.5) !important;
+  background-color: rgba(0, 128, 0, 0.2) !important;
   color: rgb(5, 93, 5);
+  padding: 2px;
+
   /* border: none !important; */
 }
 
 .users_card {
   font-size: 15px;
-  background-color: rgba(59, 216, 255, 0.5) !important;
+  background-color: rgba(59, 216, 255, 0.05) !important;
   color: rgb(5, 93, 58);
   /* border: none !important; */
 }
 .login-div {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 .login-card {
   width: 100%;
@@ -177,9 +184,30 @@ textarea {
   /* border: none !important; */
 }
 .pending_card {
-  font-size: 15px;
+  font-size: 12px;
 
-  background-color: rgba(255, 166, 0, 0.5) !important;
+  background-color: rgba(255, 166, 0, 0.2) !important;
   color: rgb(151, 105, 18);
   /* border: none !important; */
+}
+.texttext:focus{
+  outline: none;
+}
+
+.texttext{
+  height: 125px;
+}
+.allusers_card{
+  background-color: rgb(250, 250, 250) !important;
+  border-radius:5px !important;
+
+}
+.usermail{
+  /* color: rgb(81, 81, 81); */
+  /* font-weight: bold; */
+  padding: 3px 5px;
+  border-radius: 10px;
+  font-size: 13px;
+  background-color: rgb(241, 241, 241);
+
 }

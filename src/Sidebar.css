@@ -2,6 +2,7 @@
   background-color: rgb(250, 250, 250) !important;
   border-right: 1px solid rgb(206, 206, 206);
   height: 100vh;
+ 
 }
 .sidebar-i:hover {
   border-left: rgb(206, 206, 206) solid 5px;
@@ -17,4 +18,10 @@
   margin: 0;
   font-weight: bold;
   border-radius: 0px;
+}
+.sidebar-i{
+  cursor: pointer;
+}
+.whole-side{
+  position: fixed;
 }
