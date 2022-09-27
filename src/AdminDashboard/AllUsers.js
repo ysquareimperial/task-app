@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Card, Col, Row } from 'reactstrap'
-import { Table } from 'reactstrap'
+// import { Table } from 'reactstrap'
 import { SERVER_URL } from '../helpers/api'
 import Button from './Button'
 export default function AllUsers() {
     const navigate = useNavigate()
-    const allUsers = [
-        {
-            username: 'ysquareimperial',
-            usermail: 'yasir@brainstorm.ng',
-            rank: 'Developer'
-        },
-    ]
+   
 
     const [getUsers, setGetUser] = useState([])
 

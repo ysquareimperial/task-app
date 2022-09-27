@@ -7,8 +7,9 @@
 .sidebar-i:hover {
   border-left: rgb(206, 206, 206) solid 5px;
 }
-.sidebar-i {
+.sidebar-i, .log {
   padding: 10px;
+  font-size: 14px;
   margin: 0;
   border-radius:0px;
 }
@@ -24,4 +25,19 @@
 }
 .whole-side{
   position: fixed;
+}
+
+.log{
+  color:red;
+}
+.log:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+.user_email{
+  color: grey;
+  padding: 10px;
+  font-size: 14px;
+  margin: 0;
+  border-radius:0px;
 }

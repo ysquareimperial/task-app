@@ -14,6 +14,7 @@ import AppIndex from "./AppIndex";
 import Pending from "../AdminDashboard/Pending";
 import InProgress from "../AdminDashboard/InProgress";
 import Done from "../AdminDashboard/Done";
+import Profile from "../AdminDashboard/Profile";
 function AppNavigation() {
     let element = useRoutes([
         {
@@ -74,6 +75,10 @@ function AppNavigation() {
                         {
                             path: '/admin/done-tasks',
                             element: <Done/>
+                        },
+                        {
+                            path: '/admin/profile',
+                            element: <Profile/>
                         }
                     ],
                 },

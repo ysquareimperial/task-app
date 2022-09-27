@@ -1,23 +1,30 @@
 // import { Button } from 'bootstrap'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Row, Col, Card, Table } from 'reactstrap'
+import { Spinner, Table } from 'reactstrap'
 import { _get } from '../helpers/api'
 export default function Done() {
     const user = useSelector(state => state.auth.user)
 
+    const [loading, setLoading] = useState(false)
+
+
     const [doneTasks, setDoneTasks] = useState([])
     useEffect(() => {
-
+        setLoading(true)
         _get(`tasks/admin/${user.id}/completed`, resp => {
+            setLoading(false)
             console.log(resp)
             if (resp && resp.length) { setDoneTasks(resp) }
-        }, e => { console.log(e) })
+        }, e => {
+            console.log(e)
+            setLoading(false)
+        })
     }, [user.id])
 
 
     return (
-        <div className='m-5 whole'>
+        <div className='m-5 whole' style={{ fontSize: "13px" }}>
             <Table striped hover borderless size="sm">
                 <thead>
                     <tr>
@@ -31,7 +38,6 @@ export default function Done() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {JSON.stringify(pendingTasks)} */}
                     {doneTasks.map((item, index) => (
                         <tr>
                             <td>{index + 1}</td>
@@ -58,6 +64,9 @@ export default function Done() {
                     ))}
                 </tbody>
             </Table>
+                    <div className='text-center'>
+                        {loading ? <Spinner /> : ''}
+                    </div>
             {doneTasks.length === 0 ? <p className='text-center' style={{ marginTop: 50 }}>No In progress task</p> : null}
 
         </div>

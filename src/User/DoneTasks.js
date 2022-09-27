@@ -1,29 +1,12 @@
 // import { Button } from 'bootstrap'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Card } from 'reactstrap'
-import { _delete, _get } from '../helpers/api'
+import { Table } from 'reactstrap'
+import { _delete } from '../helpers/api'
 import { getDoneTasks } from '../redux/action/tasks'
 import './Style.css'
 export default function DoneTasks() {
-      const user = useSelector(state => state.auth.user)
-
-    //     const [doneTasks, setDoneTasks] = useState([])
-
-    //     const getTask = useCallback(() => {
-    //       _get(`tasks/${user.id}/completed`, resp => {
-    //         console.log(resp)
-    //         if (resp && resp.length) {
-    //           setDoneTasks(resp)
-    //         }
-    //       }, e => { console.log(e) })
-    //     }, [user.id])
-
-    //     useEffect(() => {
-    //     }, [user.id])
-    //     useEffect(() => {
-    //       getTask()
-    //     }, [getTask])
+    const user = useSelector(state => state.auth.user)
 
     const doneTasks = useSelector(state => state.tasks.doneTasks)
     const dispatch = useDispatch()
@@ -31,7 +14,7 @@ export default function DoneTasks() {
 
     const getTask = useCallback(() => {
         dispatch(getDoneTasks(user.id))
-    }, [dispatch,user])
+    }, [dispatch, user])
 
     useEffect(() => {
         getTask()
@@ -41,10 +24,52 @@ export default function DoneTasks() {
         _delete(`tasks/${id}/delete`, doneTasks, resp => { console.log(resp) }, e => { console.log(e) })
     }
     return (
-        <div className='whole' style={{margin:'70px 50px'}}>
+        <div className='whole' style={{ margin: '70px 50px', fontSize: '13px' }}>
+            <Table striped hover borderless size="sm" style={{ paddingTop: 10 }}>
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Project Name</th>
+                        <th>Task Title</th>
+                        <th>Description</th>
+                        <th>Timeline</th>
+                        <th>Status</th>
+                        <th>Assigned By</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {doneTasks.map((item, index) => (
+                        <tr>
+                            <td>{index + 1}</td>
+                            <td>{item.project_name}</td>
+                            <td>
+                                {item.title}
+                            </td>
+                            <td>
 
-            <Row>
-                {/* {JSON.stringify(doneTasks)} */}
+                                {item.description}
+                            </td>
+                            <td>
+                                {item.timeline}
+                            </td>
+                            <td>
+                                <span className='progress_card'>
+                                    {item.status}
+                                </span>
+                            </td>
+                            <td>
+                                {item.assigned_by}
+                            </td>
+                            <td>
+                                <button className='view_button' onClick={() => deleteTask(item.id)}>Delete</button>
+
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+            {/* <Row>
+             
                 <Col md={1}></Col>
                 <Col md={10}>
 
@@ -89,7 +114,7 @@ export default function DoneTasks() {
 
                 </Col>
                 <Col md={1}></Col>
-            </Row>
+            </Row> */}
             {doneTasks.length === 0 ? <p className='text-center' style={{ marginTop: 50 }}>No Done task</p> : null}
 
         </div>

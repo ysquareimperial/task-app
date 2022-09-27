@@ -36,20 +36,26 @@ export default function CreateTask() {
         }))
     }
     const handleSubmit = () => {
-        let newObj = {
-            project_name: parseInt(createTask.project_name),
-            title: createTask.title,
-            description: createTask.description,
-            timeline: createTask.timeline,
-            assigned_to: createTask.assigned_to,
-            assigned_by: parseInt(createTask.assigned_by)
+        if (createTask.project_name === '' || createTask.title === '' || createTask.description === '' || createTask.assigned_to === '' || createTask.assigned_by === '') {
+            alert('Please fill all the fields')
         }
+        else {
 
-        _post(`create/task`, newObj, resp => { console.log(resp) }, e => { console.log(e) })
+            let newObj = {
+                project_name: parseInt(createTask.project_name),
+                title: createTask.title,
+                description: createTask.description,
+                timeline: createTask.timeline,
+                assigned_to: createTask.assigned_to,
+                assigned_by: parseInt(createTask.assigned_by)
+            }
 
-        handleReset()
-        console.log(createTask)
-        navigate('/admin/pending-tasks')
+            _post(`create/task`, newObj, resp => { console.log(resp) }, e => { console.log(e) })
+
+            handleReset()
+            console.log(createTask)
+            navigate('/admin/pending-tasks')
+        }
     }
 
 

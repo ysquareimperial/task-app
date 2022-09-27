@@ -1,45 +1,34 @@
-// import { Button } from 'bootstrap'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Row, Col, Card, Table } from 'reactstrap'
-import { SERVER_URL, _get } from '../helpers/api'
-// import AnimatedMulti from './AnimatedMulti'
-// import './Style.css'
-
+import { Row, Col, Table, Spinner } from 'reactstrap'
+import { _get } from '../helpers/api'
 export default function Pending() {
     const user = useSelector(state => state.auth.user)
 
+    const [loading, setLoading] = useState(false)
+
     const [pendingTasks, setPendingTasks] = useState([])
 
-    // useEffect(() => {
-    //     fetch(`${SERVER_URL}/tasks`)
-    //         .then(raw => raw.json())
-    //         .then(resp => {
-    //             console.log(resp)
-    //             setTasksList(resp)
-    //         })
-    //         .catch(e => {
-    //             console.log(e)
-    //         })
-    // }, [])
-    useEffect(() => {
+    const allPendingTask = useCallback(() => {
+        if (user.id) {
 
-        _get(`tasks/admin/${user.id}/pending`, resp => {
-            console.log(resp)
-            if (resp && resp.length) { setPendingTasks(resp) }
-        }, e => { console.log(e) })
+            setLoading(true)
+            _get(`tasks/admin/${user.id}/pending`, resp => {
+                setLoading(false)
+                console.log(resp)
+                if (resp && resp.length) { setPendingTasks(resp) }
+            }, e => {
+                console.log(e)
+                setLoading(false)
+            })
+        }
     }, [user.id])
+    useEffect(() => {
+        allPendingTask()
+    }, [allPendingTask])
 
-
-    //     _get(`getprojects/${user.id}`, resp => {
-    //         console.log(resp)
-    //         if (resp && resp.length) {
-    //             setGetProjects(resp)
-    //         }
-    //     }, e => { console.log(e) })
-    // }, [user.id])    
     return (
-        <div className='m-5 whole'>
+        <div className='m-5 whole' style={{ fontSize: "13px" }}>
             {/* {JSON.stringify(user)}
             {JSON.stringify(pendingTasks)} */}
             {/* {JSON.stringify(tasksList)} */}
@@ -86,43 +75,10 @@ export default function Pending() {
                             ))}
                         </tbody>
                     </Table>
-                    {/* <Card className='shadow-sm  p-3 mb-3'>
-                             <p className='task_data'>Project Title: <span className='usermail'>{item.title}</span></p>
-                             <Row>
-                                 <Col md={3}>
-                                     <p className='task_data'>Title</p>
-                                     <Card className='shadow-sm p-3 title_card' style={{ hover: 'back' }}>
-                                         {item.title}
-                                     </Card>
-                                 </Col>
-                                 <Col md={3}>
-                                     <p className='task_data'>Description</p>
-                                     <Card className='shadow-sm p-3 description_card'>
-                                         {item.description}
-                                     </Card>
-                                 </Col>
-                                 <Col md={2}>
-                                     <p className='task_data'>Deadline</p>
-                                     <Card className='shadow-sm p-3 timeline_card'>
-                                         {item.timeline}
-                                     </Card>
-                                 </Col>
-                                 <Col md={2}>
-                                     <p className='task_data'>Status</p>
-                                     <Card className='shadow-sm p-3 status_card'>
-                                         {item.status}
-                                     </Card>
-                                 </Col>
-                                 <Col md={2}>
-                                     <p className='task_data'>Assigned To</p>
-                                     <Card className='shadow-sm p-3 button_card'>
-                                         {item.assigned_to}
-                                     </Card>
-                                 </Col>
-                             </Row>
-                         </Card> */}
+                    <div className='text-center'>
+                        {loading ? <Spinner /> : ''}
+                    </div>
                 </Col>
-
             </Row>
             {pendingTasks.length === 0 ? <p className='text-center' style={{ marginTop: 50 }}>No pending task</p> : null}
         </div>

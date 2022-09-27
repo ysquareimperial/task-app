@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card, Col, Row } from 'reactstrap'
 import Button from './Button'
 import { useNavigate } from 'react-router-dom';
-import { SERVER_URL, _get, _post } from '../helpers/api';
+import { _post } from '../helpers/api';
 import { useSelector } from 'react-redux'
 
 export default function CreateProject() {
@@ -10,7 +10,7 @@ export default function CreateProject() {
     let _form =
     {
         name: "",
-      }
+    }
 
     const navigate = useNavigate();
     const [createProject, setCreateProject] = useState(_form);
@@ -21,19 +21,24 @@ export default function CreateProject() {
     const handleReset = () => {
         setCreateProject((p) => ({
             ...p, name: '',
-         }))
+        }))
     }
 
     const handleSubmit = () => {
-        _post(`create/project/${user.id}`, createProject, resp => {
-            console.log(resp)
-        }, e => {
-            console.log(e)
-        })
-        handleReset()
-        console.log(createProject)
-        setCreateProject(_form)
-        navigate('/admin/all-projects')
+        if (createProject.name === '') {
+            alert("project name can't be empty")
+        } else {
+
+            _post(`create/project/${user.id}`, createProject, resp => {
+                console.log(resp)
+            }, e => {
+                console.log(e)
+            })
+            handleReset()
+            console.log(createProject)
+            setCreateProject(_form)
+            navigate('/admin/all-projects')
+        }
     }
 
     return (
@@ -47,9 +52,9 @@ export default function CreateProject() {
                             Project Name
                         </p>
                         <input className='input_field mb-3' type='text' name='name' value={createProject.name} onChange={handleChange} />
-                     </Col>
+                    </Col>
                     <Col md={6}>
-                     </Col>
+                    </Col>
                 </Row>
                 <Button buttonText={'Create Project'} onClick={() => {
                     handleSubmit()

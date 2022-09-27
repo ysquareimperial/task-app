@@ -109,29 +109,29 @@ textarea {
 }
 
 .progress_card {
-  font-size: 12px;
+  /* font-size: 12px; */
 
   background-color: rgba(255, 255, 0, 0.2) !important;
   color: rgb(168, 114, 14);
   padding: 2px;
-  /* border: none !important; */
+  border: none !important;
 }
 
 .done_card {
-  font-size: 12px;
+  /* font-size: 12px; */
 
   background-color: rgba(0, 128, 0, 0.2) !important;
   color: rgb(5, 93, 5);
   padding: 2px;
 
-  /* border: none !important; */
+  border: none !important;
 }
 
 .users_card {
   font-size: 15px;
   background-color: rgba(59, 216, 255, 0.05) !important;
   color: rgb(5, 93, 58);
-  /* border: none !important; */
+  border: none !important;
 }
 .login-div {
   margin-top: 100px;
@@ -140,7 +140,8 @@ textarea {
   width: 100%;
 }
 .allusersbtn {
-  border: 1px solid rgb(35, 108, 80);
+  /* border: 1px solid rgb(35, 108, 80); */
+  border: none;
   color: rgb(5, 93, 5);
   padding: 2px 5px;
   border-radius: 5px;
@@ -149,11 +150,12 @@ textarea {
 }
 .pendingbtn {
   /* font-size: 15px; */
+  border: none;
+  color: rgb(151, 105, 18);
   padding: 2px 5px;
   border-radius: 5px;
   background-color: rgba(255, 166, 0, 0.5) !important;
-  color: rgb(151, 105, 18);
-  border: 1px solid rgb(151, 105, 18);
+
 }
 .inprogressbtn {
   /* font-size: 15px; */
@@ -161,7 +163,8 @@ textarea {
   border-radius: 5px;
   /* background-color: rgba(255, 166, 0, 0.5) !important; */
   color: rgb(151, 105, 18);
-  border: 1px solid rgb(151, 105, 18);
+  /* border: 1px solid rgb(151, 105, 18); */
+  border: none;
 
   /* font-size: 15px; */
 
@@ -180,15 +183,17 @@ textarea {
 
   background-color: rgba(2, 151, 2, 0.5) !important;
   color: rgb(5, 93, 5);
-  border: 1px solid rgb(5, 93, 5);
+  /* border: 1px solid rgb(5, 93, 5); */
+  border: none;
+
   /* border: none !important; */
 }
 .pending_card {
-  font-size: 12px;
+  /* font-size: 12px; */
 
   background-color: rgba(255, 166, 0, 0.2) !important;
   color: rgb(151, 105, 18);
-  /* border: none !important; */
+  border: none !important;
 }
 .texttext:focus{
   outline: none;
@@ -210,4 +215,107 @@ textarea {
   font-size: 13px;
   background-color: rgb(241, 241, 241);
 
+}
+.plus_div{
+  background-color: rgba(59, 216, 255, 0.2) !important;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.project_div{
+  /* background-color: rgb(254, 254, 254); */
+  background-color: rgba(59, 216, 255, 0.2) !important;
+
+  margin: 10px 1px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.pending_div{
+  /* background-color: rgba(59, 216, 255, 0.2) !important; */
+  background-color: rgba(255, 166, 0, 0.2) !important;
+
+  margin: 10px 1px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.inprogress_div{
+  margin: 10px 1px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 0, 0.2) !important;
+
+}
+.done_div{
+  margin: 10px 1px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(0, 128, 0, 0.2) !important;
+
+}
+
+
+
+
+
+
+
+.username {
+  display: inline;
+  margin-left: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+.userimage {
+  /* display: block; */
+  margin: auto;
+  padding: auto;
+  padding: 5px;
+  width: 40px;
+  border-radius: 50%;
+}
+.bell_user_icon_div {
+  transition: 500ms;
+  border-radius: 30px;
+}
+.bell_user_icon_div:hover {
+  background-color: rgba(196, 196, 196, 0.5);
+  cursor: pointer;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 10px;
+  background-color: rgb(255, 46, 35);
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  /* padding-top: 7.5px; */
+  z-index: 1;
+}
+.profile-image{
+  width: 150px;
+  border-radius: 50%;
+}
+
+.profile-div{
+  position: relative;
+  z-index: 1;
+  margin-left: 20px;
+}
+.profile-data-div{
+  position: relative;
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(206, 206, 206);
+  /* height: 20vh; */
+  top:-70px;
+  border-radius: 5px;
+  /* z-index: -2; */
 }

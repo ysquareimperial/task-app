@@ -1,4 +1,4 @@
-  import store from "../store";
+// import store from "../store";
 
 const localEndpoint = "http://localhost:49555/api";
 const remoteEndpoint = 'https://yge.wvi.mybluehost.me/new_mylikita_server/api'

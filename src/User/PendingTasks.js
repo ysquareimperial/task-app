@@ -1,9 +1,9 @@
 // import { Button } from 'bootstrap'
-import React, { useCallback, useEffect, useState } from 'react'
-import { Row, Col, Card, Table } from 'reactstrap'
+import React, { useCallback, useEffect } from 'react'
+import { Table } from 'reactstrap'
 import './Style.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { _get, _put } from '../helpers/api'
+import { _put } from '../helpers/api'
 import { getInprogressTasks, getPendingTasks } from '../redux/action/tasks'
 export default function PendingTasks() {
     // const info = useSelector(state => state.auth)
@@ -13,7 +13,7 @@ export default function PendingTasks() {
 
     const getTask = useCallback(() => {
         dispatch(getPendingTasks(user.id))
-    }, [dispatch,user])
+    }, [dispatch, user])
 
     useEffect(() => {
         getTask()
@@ -30,7 +30,7 @@ export default function PendingTasks() {
 
     console.log(pendingTasks.id)
     return (
-        <div className='whole' style={{margin:'70px 50px'}}>
+        <div className='whole' style={{ margin: '70px 50px', fontSize: '13px' }}>
             {/* {JSON.stringify(pendingTasks)} */}
             {/* <Row className=''>
                 <Col md={1}></Col>

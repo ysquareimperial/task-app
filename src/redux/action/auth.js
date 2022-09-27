@@ -7,7 +7,7 @@ import {
   CREATING_USER,
   ERROR_CREATING_USER,
 } from "./actionType";
-import { apiURL, _postApi } from "./api";
+import { _postApi } from "./api";
 const endpoint = "auth";
 
 export function createUser(data = [], success = (f) => f, error = (f) => f) {

@@ -12,6 +12,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: 50px;
 }
 
 .nav-ul > li {
@@ -26,6 +27,7 @@
   background-color: rgba(255, 166, 0, 0.5);
   color: rgb(151, 105, 18);
   padding: 10px 15px;
+  height: 50px;
 }
 .done {
   background-color: rgba(0, 128, 0, 0.5);
@@ -95,4 +97,14 @@
   border-bottom: 3px solid rgba(0, 0, 0, 0.324);
   /* text-decoration: underline; */
   font-weight: bold;
+}
+.settings{
+  transition: 500ms;
+  border-radius: 30px;
+  padding: 5px;
+}
+.settings:hover{
+  background-color: rgba(196, 196, 196, 0.5);
+  cursor: pointer;
+  color: white;
 }
