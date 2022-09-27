@@ -1,7 +1,7 @@
 import store from "../redux/store";
 
 // export const SERVER_URL = 'http://localhost:8001'
-export const SERVER_URL = 'http://bit-taskify.herokuapp.com'
+export const SERVER_URL = 'https://bit-taskify.herokuapp.com'
 // const token = localStorage.getItem('token')
 
 export const _post = (url, data, success = f => (f), error = f => (f)) => {
