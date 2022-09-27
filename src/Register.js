@@ -74,7 +74,7 @@ export default function Register() {
                             <Card className='p-4 shadow login-card'>
                                 <Row>
                                     <Col>
-                                        <h3 className=''>Taskify</h3>
+                                        <h3 className=''>Du-it</h3>
                                         <h6 className=''>Register</h6>
                                     </Col>
                                 </Row>

@@ -78,7 +78,7 @@ export default function Login() {
                 <Row>
                   {/* {JSON.stringify(loginDetails)} */}
                   <Col>
-                    <h3 className=''>Taskify</h3>
+                    <h3 className=''>Du-it</h3>
                     <h6 className=''>Login</h6>
                   </Col>
                 </Row>
